@@ -6,7 +6,7 @@ import os
 import Room
 import threading
 
-TOKEN = "token"
+TOKEN = "1767240235:AAErtjlNc0XvApBY3MmKCfqExXDDWkKgQYA"
 bot = telebot.TeleBot(TOKEN)
 MAIN, QUIZ, ROOMS, MANAGE, INROOM, ADMIN_ROOM = range(6)
 with open("users.json") as f:
@@ -110,7 +110,7 @@ def test_markup(room_id):
 
 @bot.message_handler(commands=['start'])
 def start_message(message):
-    username = message.from_user.first_name + " " + message.from_user.last_name
+    username = str(message.from_user.first_name) + " " + str(message.from_user.last_name)
     user_id = message.from_user.id
     if users.get(user_id) is None:
         users[user_id] = User.User(bot, message.from_user.id, username)
@@ -342,7 +342,13 @@ def add_test(message):
 
 @bot.callback_query_handler(func=lambda x: True)
 def cbq(call):
-    user = users[call.message.chat.id]
+    if users.get(call.message.chat.id) is not None:
+    	user = users[call.message.chat.id]
+    else:
+        bot.answer_callback_query(call.id, text="Error!")
+        bot.edit_message_text(call.message.text, call.message.chat.id, call.message.id,
+                              reply_markup=telebot.types.InlineKeyboardMarkup())
+        return
     if user.state == QUIZ:
         user.quiz.cbq_react(call)
     elif user.state == ROOMS:

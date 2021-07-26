@@ -1,3 +1,70 @@
 {
-
+    "737116270": {
+        "state": 0,
+        "is_admin": true,
+        "current_room": 1,
+        "name": "Aleksandr Egorov",
+        "rooms": [
+            "1"
+        ],
+        "statistics": {
+            "1": {
+                "1": [
+                    [
+                        5,
+                        5
+                    ],
+                    [
+                        2,
+                        5
+                    ]
+                ],
+                "2": [
+                    [
+                        5,
+                        5
+                    ],
+                    [
+                        0,
+                        5
+                    ],
+                    [
+                        3,
+                        5
+                    ],
+                    [
+                        3,
+                        5
+                    ]
+                ]
+            }
+        }
+    },
+    "936208543": {
+        "state": 0,
+        "is_admin": false,
+        "current_room": 1,
+        "name": "Arbitrary Student",
+        "rooms": [
+            "1"
+        ],
+        "statistics": {
+            "1": {
+                "2": [
+                    [
+                        3,
+                        5
+                    ]
+                ]
+            }
+        }
+    },
+    "185970407": {
+        "state": 0,
+        "is_admin": false,
+        "current_room": 0,
+        "name": "\u0412\u0438\u043d\u043e\u0433\u0440\u0430\u0434\u043e\u0432 \u041c\u0438\u0445\u0430\u0438\u043b None",
+        "rooms": [],
+        "statistics": {}
+    }
 }
