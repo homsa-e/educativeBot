@@ -6,7 +6,7 @@ import os
 import Room
 import threading
 
-TOKEN = "1767240235:AAErtjlNc0XvApBY3MmKCfqExXDDWkKgQYA"
+TOKEN = ""
 bot = telebot.TeleBot(TOKEN)
 MAIN, QUIZ, ROOMS, MANAGE, INROOM, ADMIN_ROOM = range(6)
 with open("users.json") as f:
